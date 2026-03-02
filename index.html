@@ -18,7 +18,7 @@
     <!-- 3-2: ナビゲーションバー -->
     <header id="header">
         <div class="container header-inner">
-            <h1 class="logo">Rintarou M.</h1>
+            <h1 class="logo">Rintarou Matumoto</h1>
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#about">About</a></li>
@@ -33,7 +33,7 @@
     <main>
         <!-- 3-3: ヒーローセクション -->
         <section id="hero" class="hero">
-            <div class="container hero-inner">
+            <div class="container">
                 <p class="hero-sub">Specialist Student Engineer</p>
                 <h2 class="hero-title">付加価値を、<br>技術で形に。</h2>
                 <p class="hero-description">
@@ -49,10 +49,10 @@
         <!-- 3-4: Aboutセクション -->
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title">About</h2>
+                <h2 class="section-title"><span class="section-num">01</span>About</h2>
                 <div class="about-inner">
                     <div class="about-img">
-                        <!-- 画像がない場合は背景色のみ表示されます -->
+                        <!-- AI生成したマスコット画像を images/profile.png として保存してください -->
                         <img src="images/profile.png" alt="プロフィール画像">
                     </div>
                     <div class="about-text">
@@ -67,7 +67,7 @@
         <!-- 3-5: Skillsセクション -->
         <section id="skills" class="skills">
             <div class="container">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title"><span class="section-num">02</span>Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <h3>Frontend</h3>
@@ -93,21 +93,30 @@
             </div>
         </section>
 
-       <!-- 3-6: Worksセクション -->
+        <!-- 3-6: Worksセクション -->
         <section id="works" class="works">
             <div class="container">
-                <h2 class="section-title">Works</h2>
+                <h2 class="section-title"><span class="section-num">03</span>Works</h2>
                 <div class="works-item">
-                    <div class="works-img">
-                        <img src="images/wifi_monitor.png" alt="Wi-Fi Monitoring Dashboard">
+                    <!-- 画像ギャラリー部分 -->
+                    <div class="works-gallery">
+                        <div class="gallery-main">
+                            <img src="images/works_main.png" alt="Dashboard Main">
+                        </div>
+                        <div class="gallery-sub">
+                            <img src="images/works_chart.png" alt="Protocol Chart">
+                            <img src="images/works_terminal.png" alt="Terminal List">
+                            <img src="images/works_log.png" alt="Communication Log">
+                        </div>
                     </div>
+
                     <div class="works-info">
                         <div class="works-category">Personal Development</div>
                         <h3 class="works-item-title">Wi-Fi Monitoring Dashboard</h3>
                         <p class="works-description">
-                            Wi-Fiの通信量をリアルタイムで可視化するデスクトップ・ダッシュボードです。
-                            Scapyを用いたパケットキャプチャとFlask-SocketIOによるリアルタイム通信を組み合わせ、
-                            「ネットワークの今」を直感的に把握できる付加価値を提供します。
+                            Wi-Fiの通信量をリアルタイムで可視化するダッシュボードです。
+                            パケット解析、プロトコル別集計、端末特定、詳細ログの4つの視点から、
+                            目に見えないネットワークの状態に「付加価値」としての透明性を提供します。
                         </p>
                         
                         <div class="works-tech-tags">
@@ -120,7 +129,7 @@
                         </div>
 
                         <div class="works-links">
-                            <a href="https://github.com/Matumoto-Rintarou/wifi_monitor.git" class="btn btn-outline" target="_blank">View on GitHub</a>
+                            <a href="https://github.com/Matumoto-Rintarou/wifi_monitor.git" class="btn" target="_blank">View on GitHub</a>
                         </div>
                     </div>
                 </div>
