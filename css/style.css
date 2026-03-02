@@ -231,3 +231,87 @@ footer {
     font-size: 0.8rem;
     color: #999;
 }
+/* --- Works Section --- */
+.works {
+    background-color: #fff;
+}
+
+.works-item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.works-img {
+    flex: 1.2;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.works-img img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.works-item:hover .works-img img {
+    transform: scale(1.05); /* ホバーで少しズーム */
+}
+
+.works-info {
+    flex: 1;
+}
+
+.works-category {
+    font-size: 0.8rem;
+    color: var(--main-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.works-item-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.works-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.works-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.works-tech-tags span {
+    background-color: var(--light-gray);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--main-dark);
+}
+
+/* GitHub用の枠線ボタン */
+.btn-outline {
+    background-color: transparent;
+    color: var(--main-dark);
+    border: 1px solid var(--main-dark);
+}
+
+.btn-outline:hover {
+    background-color: var(--main-dark);
+    color: #fff;
+}
