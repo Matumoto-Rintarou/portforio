@@ -1,0 +1,9 @@
+portfolio
+├── index.html         (メインのファイル)
+├── css
+│   └── style.css      (デザイン用)
+├── js
+│   └── main.js       (動き用)
+├── images
+│   └── wifi_monitor.png (実績画像)
+└── README.md          (GitHub用説明ファイル)
