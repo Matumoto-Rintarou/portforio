@@ -18,7 +18,7 @@
     <!-- 3-2: ナビゲーションバー -->
     <header id="header">
         <div class="container header-inner">
-            <h1 class="logo">Rintarou Matumoto</h1>
+            <h1 class="logo">Rintarou M.</h1>
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#about">About</a></li>
@@ -52,7 +52,6 @@
                 <h2 class="section-title"><span class="section-num">01</span>About</h2>
                 <div class="about-inner">
                     <div class="about-img">
-                        <!-- AI生成したマスコット画像を images/profile.png として保存してください -->
                         <img src="images/profile.png" alt="プロフィール画像">
                     </div>
                     <div class="about-text">
@@ -98,7 +97,6 @@
             <div class="container">
                 <h2 class="section-title"><span class="section-num">03</span>Works</h2>
                 <div class="works-item">
-                    <!-- 画像ギャラリー部分 -->
                     <div class="works-gallery">
                         <div class="gallery-main">
                             <img src="images/works_main.png" alt="Dashboard Main">
@@ -109,7 +107,6 @@
                             <img src="images/works_log.png" alt="Communication Log">
                         </div>
                     </div>
-
                     <div class="works-info">
                         <div class="works-category">Personal Development</div>
                         <h3 class="works-item-title">Wi-Fi Monitoring Dashboard</h3>
@@ -118,7 +115,6 @@
                             パケット解析、プロトコル別集計、端末特定、詳細ログの4つの視点から、
                             目に見えないネットワークの状態に「付加価値」としての透明性を提供します。
                         </p>
-                        
                         <div class="works-tech-tags">
                             <span>Python (Flask)</span>
                             <span>JavaScript</span>
@@ -127,7 +123,6 @@
                             <span>SQLite</span>
                             <span>Scapy</span>
                         </div>
-
                         <div class="works-links">
                             <a href="https://github.com/Matumoto-Rintarou/wifi_monitor.git" class="btn" target="_blank">View on GitHub</a>
                         </div>
@@ -142,6 +137,12 @@
             <p>&copy; 2026 Rintarou Matumoto</p>
         </div>
     </footer>
+
+    <!-- 画像拡大用モーダル -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="full-image">
+    </div>
 
     <!-- JS読み込み -->
     <script src="js/main.js"></script>
