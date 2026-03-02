@@ -1,3 +1,12 @@
+/* --- 変数の定義 --- */
+:root {
+    --main-blue: #0984E3;
+    --main-dark: #1E293B;
+    --text-color: #333333;
+    --light-gray: #F8F9FA;
+    --border-color: #EEEEEE;
+}
+
 /* --- リセットCSS --- */
 * {
     margin: 0;
@@ -6,45 +15,67 @@
 }
 
 html {
-    scroll-behavior: smooth; /* スムーズスクロール有効化 */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Inter', 'Noto Sans JP', sans-serif;
     line-height: 1.8;
-    color: #333;
-    background-color: #fff;
+    color: var(--text-color);
+    background-color: #ffffff;
     word-break: break-all;
 }
 
-/* --- コンテナ（横幅の制限） --- */
+/* --- 共通パーツ --- */
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- セクション共通余白 --- */
 section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
-h2 {
-    font-size: 2rem;
+.section-title {
+    font-size: 2.2rem;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     letter-spacing: 0.1em;
+    position: relative;
 }
-/* --- Header / Nav --- */
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: var(--main-blue);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Header --- */
 #header {
     width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
-    position: fixed; /* 上部に固定 */
+    position: fixed;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
     z-index: 100;
     border-bottom: 1px solid var(--border-color);
 }
@@ -57,9 +88,8 @@ h2 {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
 }
 
 .nav-list {
@@ -68,8 +98,8 @@ h2 {
 }
 
 .nav-list a {
-    font-weight: 500;
     font-size: 0.9rem;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
@@ -77,46 +107,127 @@ h2 {
     color: var(--main-blue);
 }
 
-/* --- Hero Section --- */
+/* --- Hero --- */
 .hero {
-    height: 100vh; /* 画面いっぱいの高さ */
+    height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px; /* ヘッダー分下げる */
+    background-color: #ffffff;
 }
 
 .hero-sub {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--main-blue);
     font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
 }
 
 .hero-title {
     font-size: 3.5rem;
-    line-height: 1.2;
-    text-align: left; /* 左揃えで清潔感を出す */
-    margin-bottom: 20px;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .hero-description {
     font-size: 1.1rem;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    max-width: 600px;
 }
 
-/* --- Button --- */
 .btn {
     display: inline-block;
-    padding: 12px 32px;
-    background-color: #1E293B; /* 濃いネイビー */
+    padding: 15px 40px;
+    background-color: var(--main-dark);
     color: #fff;
     border-radius: 4px;
     font-weight: 600;
-    transition: opacity 0.3s;
+    transition: all 0.3s;
 }
 
 .btn:hover {
-    opacity: 0.8;
+    background-color: var(--main-blue);
+    transform: translateY(-2px);
+}
+
+/* --- About --- */
+.about {
+    background-color: #fff;
+}
+
+.about-inner {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--light-gray);
+    border: 5px solid var(--light-gray);
+}
+
+.about-text {
+    flex: 1.5;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* --- Skills --- */
+.skills {
+    background-color: var(--light-gray);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: all 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    color: var(--main-blue);
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    color: #999;
 }
