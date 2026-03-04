@@ -19,7 +19,13 @@
     <header id="header">
         <div class="container header-inner">
             <h1 class="logo">Rintarou M.</h1>
-            <nav class="nav">
+            <!-- 5-1修正点: ハンバーガーボタンを追加 -->
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav" id="nav-menu">
                 <ul class="nav-list">
                     <li><a href="#about">About</a></li>
                     <li><a href="#timeline">Timeline</a></li>
@@ -48,7 +54,7 @@
         </section>
 
         <!-- 3-4: Aboutセクション -->
-        <section id="about" class="about">
+        <section id="about" class="about reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">01</span>About</h2>
                 <div class="about-inner">
@@ -63,8 +69,8 @@
             </div>
         </section>
 
-        <!-- 3-7: Timelineセクション（学歴・成長の記録） -->
-        <section id="timeline" class="timeline">
+        <!-- 3-7: Timelineセクション -->
+        <section id="timeline" class="timeline reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">02</span>Timeline</h2>
                 <div class="timeline-list">
@@ -93,76 +99,86 @@
             </div>
         </section>
 
-        <!-- 3-5: Skillsセクション -->
-        <section id="skills" class="skills">
+        <!-- 03 Skillsセクションを書き換え -->
+        <section id="skills" class="skills reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">03</span>Skills</h2>
                 <div class="skills-grid">
+                    <!-- 5-4: スキルバーの追加 -->
                     <div class="skill-card">
                         <h3>Frontend</h3>
-                        <p>HTML / CSS / JavaScript</p>
+                        <p>HTML / CSS / JS</p>
+                        <div class="skill-bar"><div class="skill-progress" data-level="85%"></div></div>
                     </div>
                     <div class="skill-card">
                         <h3>Backend</h3>
-                        <p>Java / PHP / Python / Flask</p>
+                        <p>Java / PHP / Python</p>
+                        <div class="skill-bar"><div class="skill-progress" data-level="80%"></div></div>
                     </div>
                     <div class="skill-card">
                         <h3>Database</h3>
                         <p>MySQL / SQLite</p>
+                        <div class="skill-bar"><div class="skill-progress" data-level="75%"></div></div>
                     </div>
                     <div class="skill-card">
-                        <h3>Cloud & Tools</h3>
-                        <p>AWS / Docker / Git / VS Code</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Design</h3>
-                        <p>Figma / Canva</p>
+                        <h3>Infrastructure</h3>
+                        <p>AWS / Docker / Linux</p>
+                        <div class="skill-bar"><div class="skill-progress" data-level="70%"></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3-6: Worksセクション -->
-        <section id="works" class="works">
+        <!-- 04 Worksセクションにフィルターを追加 -->
+        <section id="works" class="works reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">04</span>Works</h2>
-                <div class="works-item">
-                    <div class="works-gallery">
-                        <div class="gallery-main">
-                            <img src="images/works_main.png" alt="Dashboard Main">
+                
+                <!-- 5-5: 作品フィルターボタン -->
+                <div class="works-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="python">Python</button>
+                    <button class="filter-btn" data-filter="web">Web App</button>
+                </div>
+
+                <div class="works-list">
+                    <!-- 既存のWi-Fiダッシュボードにカテゴリを追加 (data-category) -->
+                    <div class="works-item" data-category="python">
+                        <div class="works-gallery">
+                            <div class="gallery-main"><img src="images/works_main.png" alt="Main"></div>
+                            <div class="gallery-sub">
+                                <img src="images/works_chart.png" alt="Chart">
+                                <img src="images/works_terminal.png" alt="Terminal">
+                                <img src="images/works_log.png" alt="Log">
+                            </div>
                         </div>
-                        <div class="gallery-sub">
-                            <img src="images/works_chart.png" alt="Protocol Chart">
-                            <img src="images/works_terminal.png" alt="Terminal List">
-                            <img src="images/works_log.png" alt="Communication Log">
+                        <div class="works-info">
+                            <div class="works-category">Personal Development</div>
+                            <h3 class="works-item-title">Wi-Fi Monitoring Dashboard</h3>
+                            <p class="works-description">Wi-Fiの通信量をリアルタイムで可視化するダッシュボードです。</p>
+                            <div class="works-tech-tags">
+                                <span>Python (Flask)</span><span>JavaScript</span><span>SQLite</span>
+                            </div>
+                            <div class="works-links">
+                                <a href="https://github.com/Matumoto-Rintarou/wifi_monitor.git" class="btn" target="_blank">View on GitHub</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="works-info">
-                        <div class="works-category">Personal Development</div>
-                        <h3 class="works-item-title">Wi-Fi Monitoring Dashboard</h3>
-                        <p class="works-description">
-                            Wi-Fiの通信量をリアルタイムで可視化するダッシュボードです。
-                            パケット解析、プロトコル別集計、端末特定、詳細ログの4つの視点から、
-                            目に見えないネットワークの状態に「付加価値」としての透明性を提供します。
-                        </p>
-                        <div class="works-tech-tags">
-                            <span>Python (Flask)</span>
-                            <span>JavaScript</span>
-                            <span>Socket.IO</span>
-                            <span>Chart.js</span>
-                            <span>SQLite</span>
-                            <span>Scapy</span>
-                        </div>
-                        <div class="works-links">
-                            <a href="https://github.com/Matumoto-Rintarou/wifi_monitor.git" class="btn" target="_blank">View on GitHub</a>
+                    
+                    <!-- (テスト用) 2つ目のダッシュ作品を追加（動作確認のため） -->
+                    <div class="works-item" data-category="web" style="margin-top: 40px;">
+                        <div class="works-info">
+                            <div class="works-category">Team Development</div>
+                            <h3 class="works-item-title">Dummy Web Project</h3>
+                            <p class="works-description">フィルターの動作確認用サンプルです。Web Appタグで表示されます。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3-8: Contactセクション -->
-        <section id="contact" class="contact">
+        <!-- 3-8修正点: revealクラスを追加 -->
+        <section id="contact" class="contact reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">05</span>Contact</h2>
                 <div class="contact-inner">
