@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rintarou Matumoto | Portfolio</title>
-    <meta name="description" content="専門学生エンジニア 松本倫太郎のポートフォリオサイトです。付加価値のあるものづくりを追求しています。">
+    <meta name="description" content="ECCコンピュータ専門学校 松本倫太郎のポートフォリオ。付加価値を追求するエンジニアリング。">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,18 +15,21 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- 5-7: スクロール進捗バー -->
+    <div id="scroll-progress"></div>
+
     <!-- 3-2: ナビゲーションバー -->
     <header id="header">
         <div class="container header-inner">
-            <h1 class="logo">Rintarou M.</h1>
-            <!-- 5-1修正点: ハンバーガーボタンを追加 -->
+            <h1 class="logo">Rintarou Matumoto</h1>
+            
             <div class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
+
             <nav class="nav" id="nav-menu">
                 <ul class="nav-list">
+                    <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#timeline">Timeline</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -38,7 +41,7 @@
     </header>
 
     <main>
-        <!-- 3-3: ヒーローセクション -->
+        <!-- 3-3: ヒーロー -->
         <section id="hero" class="hero">
             <div class="container">
                 <p class="hero-sub">Specialist Student Engineer</p>
@@ -53,23 +56,23 @@
             </div>
         </section>
 
-        <!-- 3-4: Aboutセクション -->
+        <!-- 3-4: About (マスコット横並び対応) -->
         <section id="about" class="about reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">01</span>About</h2>
                 <div class="about-inner">
                     <div class="about-img">
-                        <img src="images/profile.png" alt="プロフィール画像">
+                        <img src="images/profile.png" alt="マスコット">
                     </div>
                     <div class="about-text">
-                        <p>大阪府出身のIT専門学生です。幼少期からPCに親しみ、専門学校入学を機に本格的にITの世界へ飛び込みました。</p>
+                        <p>松本凜多朗と申します。大阪府出身の4年制IT専門学生です。幼少期からPCに親しみ、専門学校入学を機に本格的にITの世界へ飛び込みました。</p>
                         <p>現在はAWSを用いたインフラ構築や、Pythonフレームワーク（Flask等）の活用を研究中。単なるコーディングに留まらず、インフラからバックエンドまで一気通貫した「付加価値」を形にできるエンジニアを目指しています。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3-7: Timelineセクション -->
+        <!-- 3-7: Timeline -->
         <section id="timeline" class="timeline reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">02</span>Timeline</h2>
@@ -77,137 +80,142 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2024.04</div>
                         <div class="timeline-content">
-                            <h3>Eccコンピュータ専門学校 入学</h3>
-                            <p>ITの世界へ。1年次でWebの基礎（HTML/CSS, JS）からサーバーサイド（Java, PHP）、データベース（MySQL）までを一通り習得。</p>
+                            <h3>ECCコンピュータ専門学校 入学</h3>
+                            <p>Webの基礎（HTML/CSS, JS）からサーバーサイド（Java, PHP）、MySQLまで習得。</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2025.04</div>
                         <div class="timeline-content">
                             <h3>実践開発と技術の幅を拡大</h3>
-                            <p>2年次よりチーム開発を開始。Git/GitHubによる共同開発やDockerでの環境構築、Figmaを用いたUI設計を経験。並行してPython, AWS, Linuxの学習を進め、インフラ層への理解を深める。</p>
+                            <p>チーム開発を開始。Git/Docker/Figmaを導入し、Python, AWS, Linuxの学習を深める。</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2026.04</div>
                         <div class="timeline-content">
                             <h3>個人開発・専門性の追求</h3>
-                            <p>「ネットワークの可視化」をテーマに個人開発に着手。Pythonフレームワーク（Flask）を深掘りし、リアルタイム監視ツールの実装を通じてフルスタックな開発能力を磨く。</p>
+                            <p>Flaskを用いたリアルタイム監視ツールの実装を通じ、フルスタックな能力を磨く。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 03 Skillsセクションを書き換え -->
+        <!-- 3-5, 5-4: Skills (個別数値化バー) -->
         <section id="skills" class="skills reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">03</span>Skills</h2>
+                
+                <!-- 基準（凡例）の追加 -->
+                <div class="skills-legend">
+                    <div class="legend-item"><span class="dot d-90"></span> 90%~：実務レベル（深い理解と応用が可能）</div>
+                    <div class="legend-item"><span class="dot d-70"></span> 70%~：応用レベル（独力でアプリ開発・実装が可能）</div>
+                    <div class="legend-item"><span class="dot d-50"></span> 50%~：基礎レベル（構文を理解し、調べながら実装可能）</div>
+                </div>
+
                 <div class="skills-grid">
-                    <!-- 5-4: スキルバーの追加 -->
-                    <div class="skill-card">
-                        <h3>Frontend</h3>
-                        <p>HTML / CSS / JS</p>
-                        <div class="skill-bar"><div class="skill-progress" data-level="85%"></div></div>
+                    <!-- Frontend -->
+                    <div class="skill-category-box">
+                        <h3 class="category-title">Frontend</h3>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>HTML5 / CSS3</span><span class="skill-percentage" data-target="80">0%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-level="80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>JavaScript</span><span class="skill-percentage" data-target="75">0%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-level="75%"></div></div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <h3>Backend</h3>
-                        <p>Java / PHP / Python</p>
-                        <div class="skill-bar"><div class="skill-progress" data-level="80%"></div></div>
+                    <!-- Backend -->
+                    <div class="skill-category-box">
+                        <h3 class="category-title">Backend</h3>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Java</span><span class="skill-percentage" data-target="0">0%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-level="70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Python (Flask)</span><span class="skill-percentage" data-target="65">0%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-level="65%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>PHP</span><span class="skill-percentage" data-target="70">0%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-level="70%"></div></div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <h3>Database</h3>
-                        <p>MySQL / SQLite</p>
-                        <div class="skill-bar"><div class="skill-progress" data-level="75%"></div></div>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Infrastructure</h3>
-                        <p>AWS / Docker / Linux</p>
-                        <div class="skill-bar"><div class="skill-progress" data-level="70%"></div></div>
+                    <!-- Infrastructure -->
+                    <div class="skill-category-box">
+                        <h3 class="category-title">DB & Infrastructure</h3>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>MySQL / SQLite</span><span class="skill-percentage" data-target="70">0%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-level="70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>AWS / Docker</span><span class="skill-percentage" data-target="50">0%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-level="50%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Linux (LPI)</span><span class="skill-percentage" data-target="35">0%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-level="35%"></div></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 04 Worksセクションにフィルターを追加 -->
+        <!-- 3-6, 5-5: Works (フィルター対応) -->
         <section id="works" class="works reveal">
             <div class="container">
                 <h2 class="section-title"><span class="section-num">04</span>Works</h2>
-                
-                <!-- 5-5: 作品フィルターボタン -->
                 <div class="works-filter">
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="python">Python</button>
                     <button class="filter-btn" data-filter="web">Web App</button>
                 </div>
-
                 <div class="works-list">
-                    <!-- 既存のWi-Fiダッシュボードにカテゴリを追加 (data-category) -->
                     <div class="works-item" data-category="python">
                         <div class="works-gallery">
                             <div class="gallery-main"><img src="images/works_main.png" alt="Main"></div>
                             <div class="gallery-sub">
-                                <img src="images/works_chart.png" alt="Chart">
-                                <img src="images/works_terminal.png" alt="Terminal">
-                                <img src="images/works_log.png" alt="Log">
+                                <img src="images/works_chart.png" alt="Chart"><img src="images/works_terminal.png" alt="Terminal"><img src="images/works_log.png" alt="Log">
                             </div>
                         </div>
                         <div class="works-info">
                             <div class="works-category">Personal Development</div>
                             <h3 class="works-item-title">Wi-Fi Monitoring Dashboard</h3>
-                            <p class="works-description">Wi-Fiの通信量をリアルタイムで可視化するダッシュボードです。</p>
-                            <div class="works-tech-tags">
-                                <span>Python (Flask)</span><span>JavaScript</span><span>SQLite</span>
-                            </div>
-                            <div class="works-links">
-                                <a href="https://github.com/Matumoto-Rintarou/wifi_monitor.git" class="btn" target="_blank">View on GitHub</a>
-                            </div>
+                            <p class="works-description">Wi-Fiの通信量をリアルタイムで可視化。パケット解析や端末特定を提供します。</p>
+                            <div class="works-tech-tags"><span>Python</span><span>JS</span><span>Socket.IO</span><span>SQLite</span></div>
+                            <div class="works-links"><a href="https://github.com/Matumoto-Rintarou/wifi_monitor.git" class="btn" target="_blank">View on GitHub</a></div>
                         </div>
                     </div>
-                    
-                    <!-- (テスト用) 2つ目のダッシュ作品を追加（動作確認のため） -->
                     <div class="works-item" data-category="web" style="margin-top: 40px;">
                         <div class="works-info">
-                            <div class="works-category">Team Development</div>
-                            <h3 class="works-item-title">Dummy Web Project</h3>
-                            <p class="works-description">フィルターの動作確認用サンプルです。Web Appタグで表示されます。</p>
+                            <h3 class="works-item-title">Sample Web App</h3>
+                            <p class="works-description">フィルター確認用のダミーです。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3-8修正点: revealクラスを追加 -->
+        <!-- 3-8: Contact -->
         <section id="contact" class="contact reveal">
-            <div class="container">
+            <div class="container contact-inner">
                 <h2 class="section-title"><span class="section-num">05</span>Contact</h2>
-                <div class="contact-inner">
-                    <p>制作に関するお問い合わせや、技術的なお話など、<br>お気軽にメールにてご連絡ください。</p>
-                    <a href="mailto:xorin0511rinox@gmail.com" class="contact-email">
-                        xorin0511rinox@gmail.com
-                    </a>
-                </div>
+                <p>お問い合わせはこちらのメールアドレスまでご連絡ください。</p>
+                <a href="mailto:xorin0511rinox@gmail.com" class="contact-email">xorin0511rinox@gmail.com</a>
             </div>
         </section>
     </main>
 
-    <!-- 3-9: Footer -->
     <footer id="footer">
         <div class="container">
-            <div class="footer-links">
-                <a href="https://github.com/Matumoto-Rintarou" target="_blank">GitHub Profile</a>
-            </div>
+            <div class="footer-links"><a href="https://github.com/Matumoto-Rintarou" target="_blank">GitHub Profile</a></div>
             <p>&copy; 2026 Rintarou Matumoto</p>
         </div>
     </footer>
 
-    <!-- 画像拡大用モーダル -->
-    <div id="image-modal" class="modal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="full-image">
-    </div>
-
-    <!-- JS読み込み -->
+    <div id="image-modal" class="modal"><span class="modal-close">&times;</span><img class="modal-content" id="full-image"></div>
     <script src="js/main.js"></script>
 </body>
 </html>
